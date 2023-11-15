@@ -1,0 +1,28 @@
+#https://replit.com/join/tpchbvdrsb-rodrigootero1
+cond = True
+contador=1
+ventas=0
+while cond == True:
+  nombre=str(input("introduzca el nombre del vendedor: "))
+  base=float(input("indique el salario base del vendedor: "))
+  numventas=int(input("indique el número de ventas: "))
+  while numventas>=contador:
+    contador+=1
+    suma=float(input("indique lo ganado en la venta: "))
+    ventas+=suma
+  if ventas<3500:
+    comision= ventas*.07
+  elif ventas>=3500 and ventas<=7000:
+    comision= ventas*.10
+  elif ventas>7000:
+    comision= ventas*.15
+  sueldototal= base+comision
+  print("El sueldo total de",nombre,"es de",sueldototal,"he hizo un total de",numventas,"ventas")
+  vendedor=str(input("¿Hay otro vendedor? (si/no): "))
+  if vendedor =="si":
+    cond = True  
+    contador=0
+    ventas=1
+    
+  elif vendedor=="no":
+    cond = False
